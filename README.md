@@ -1,4 +1,4 @@
-![TicketNGo](../.github/logo-ticketandgo.svg)
+![TicketNGo](.github/logo-ticketandgo.svg)
 
 ![Version](https://img.shields.io/badge/1.0.0-beta?label=version)
 ![TicketNGo](https://img.shields.io/badge/powered_by-Ticket%20N%20Go-051d36)
