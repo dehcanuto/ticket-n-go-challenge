@@ -1,7 +1,7 @@
-export default function ProductSinglePage() {
+import { ProductSingle } from "@/components/organisms";
+
+export default function ProductSinglePage({ params }: { params: { id: string } }) {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Produto Single</h1>
-    </main>
+    <ProductSingle id={params.id} />
   );
 }
