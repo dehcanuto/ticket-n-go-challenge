@@ -1,4 +1,4 @@
-interface ProductRatingPropType {
+export interface ProductRatingPropType {
     rate: number
     count: number
 }
