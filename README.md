@@ -15,6 +15,7 @@ Desenvolva um catálogo de produtos simples que mostre produtos da Fake Store AP
 *  [NodeJS](https://nodejs.org/en/docs/) - Ambiente de execução JavaScript
 *  [NextJS](https://nextjs.org/docs) - Framework web TypeScript para front-end
 *  [Tailwind CSS](https://tailwindcss.com/docs) - Framework para estilização
+*  [Atomic Design](https://atomicdesign.bradfrost.com/) - Metodologia para o design system
 *  [Fake Store API](https://fakestoreapi.com/docs) - Api dos produtos
 
 ## 🚀 Instalação
