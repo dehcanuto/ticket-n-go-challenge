@@ -23,12 +23,12 @@ const ProductsFlow = ({ title, url, limit = 0, notMore = false }: ProductsFlowPr
     }, [limit, url]);
 
     return (
-        <section className="flex flex-col w-full gap-4">
+        <section className="flex flex-col w-full p-4 gap-4">
             <div className="flex items-center justify-between">
                 <h2 className="text-2xl font-bold tracking-tight text-white">{title}</h2>
                 {!notMore && <Link href={{ pathname: url }} className="text-blue-500">Ver Mais</Link>}
             </div>
-            <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+            <div className="grid grid-cols-1 gap-x-4 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
                 {!loading ? 
                     products.length ? 
                         products?.map((item: ProductPropType, key) => 

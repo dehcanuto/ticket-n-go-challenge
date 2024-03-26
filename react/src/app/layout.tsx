@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "../styles/globals.css";
 
 import { Header } from "@/components/organisms";
+import SessionRoot from "@/context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,12 +20,14 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${inter.className} bg-slate-800`}>
-        <Header />
-        <main className="flex min-h-screen flex-col items-center">
-          <div className="container mx-auto my-8">
-            {children}
-          </div>
-        </main>
+        <SessionRoot>
+          <Header />
+          <main className="flex min-h-screen flex-col items-center">
+            <div className="container mx-auto my-8">
+              {children}
+            </div>
+          </main>
+        </SessionRoot>
       </body>
     </html>
   );
