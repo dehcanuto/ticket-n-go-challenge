@@ -1,7 +1,11 @@
-export default function CategoryPage() {
+import { ProductsFlow } from "@/components/organisms";
+import { categoriesList } from "@/utils/categories";
+
+export default function CategoryPage({ params }: { params: { slug: string } }) {
+  const titlePage = categoriesList.find(item => item.path == `/category/${params.slug}`)?.title || ''
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Categoria Single</h1>
-    </main>
+    <div className="flex flex-col w-full items-center justify-between gap-8">
+      <ProductsFlow title={titlePage} url={`/category/${params.slug}`} notMore />
+    </div>
   );
 }

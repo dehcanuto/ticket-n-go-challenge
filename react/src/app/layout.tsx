@@ -20,7 +20,11 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className={`${inter.className} bg-slate-800`}>
         <Header />
-        {children}
+        <main className="flex min-h-screen flex-col items-center">
+          <div className="container mx-auto my-8">
+            {children}
+          </div>
+        </main>
       </body>
     </html>
   );

@@ -7,7 +7,7 @@ import { ProductPropType } from "@/types/Product";
 import api from "@/services/api";
 import { ProductCard } from "@/components/molecules";
 
-const ProductsFlow = ({ title, url, limit = 0 }: ProductsFlowPropsType) => {
+const ProductsFlow = ({ title, url, limit = 0, notMore = false }: ProductsFlowPropsType) => {
     const [loading, setLoading] = useState<boolean>(true);
     const [products, setProducts] = useState<ProductPropType[]>([]);
 
@@ -23,10 +23,10 @@ const ProductsFlow = ({ title, url, limit = 0 }: ProductsFlowPropsType) => {
     }, [limit, url]);
 
     return (
-        <section className="flex flex-col gap-4">
+        <section className="flex flex-col w-full gap-4">
             <div className="flex items-center justify-between">
                 <h2 className="text-2xl font-bold tracking-tight text-white">{title}</h2>
-                <Link href={{ pathname: url }} className="text-blue-500">Ver Mais</Link>
+                {!notMore && <Link href={{ pathname: url }} className="text-blue-500">Ver Mais</Link>}
             </div>
             <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                 {!loading ? 
