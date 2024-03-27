@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { FiChevronRight } from "react-icons/fi";
 
 import { moneyFormatter } from "@/helpers";
@@ -9,16 +10,16 @@ import api from "@/services/api";
 import { ProductPropType } from "@/types/Product";
 import { Rating } from "@/components/atoms";
 import { ButtonAddCart } from "@/components/molecules";
+import { categoriesList } from "@/utils/categories";
 
 const ProductSingle = ({ id }: { id: string }) => {
-    const [loading, setLoading] = useState<boolean>(true);
     const [product, setProduct] = useState<ProductPropType>();
+    const categoryUrl = categoriesList.find(item => item.titleEs == product?.category)
 
     useEffect(() => {
         async function getProduct() {
             const { data } = await api.get(id);
             setProduct(data);
-            setLoading(false);
         }
         getProduct();
     }, [id]);
@@ -43,16 +44,16 @@ const ProductSingle = ({ id }: { id: string }) => {
                                 <ol role="list" className="mx-auto flex w-full max-w-2xl items-center space-x-2">
                                     <li>
                                         <div className="flex items-center">
-                                            <a href="#" className="mr-2 capitalize text-sm font-medium text-blue-400 truncate">
-                                                {product.category}
-                                            </a>
+                                            <Link href={{ pathname: categoryUrl?.path }} className="mr-2 capitalize text-sm font-medium text-blue-400 truncate">
+                                                {categoryUrl?.title}
+                                            </Link>
                                             <FiChevronRight className="text-slate-500" />
                                         </div>
                                     </li>
                                     <li className="flex w-full max-w-sm text-sm">
-                                        <a href="#" aria-current="page" className="font-medium text-gray-400 truncate">
+                                        <span aria-current="page" className="font-medium text-gray-400 truncate">
                                             {product.title}
-                                        </a>
+                                        </span>
                                     </li>
                                 </ol>
                             </nav>
