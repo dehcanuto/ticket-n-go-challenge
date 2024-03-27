@@ -67,7 +67,7 @@ const ProductSingle = ({ id }: { id: string }) => {
                             {products.description}
                         </p>
                         <div className="flex items-center">
-                            <button className="flex px-8 py-3 bg-indigo-600 text-white text-sm font-medium rounded hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500 gap-3">
+                            <button type="button" className="flex px-8 py-3 bg-indigo-600 text-white text-sm font-medium rounded hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500 gap-3">
                                 <FiPlus className="text-xl" />
                                 Adicionar ao Carrinho
                             </button>
