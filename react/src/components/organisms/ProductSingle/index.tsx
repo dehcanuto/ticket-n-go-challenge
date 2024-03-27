@@ -2,22 +2,17 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { FiChevronRight, FiPlus } from "react-icons/fi";
+import { FiChevronRight } from "react-icons/fi";
 
-import useCart from "@/hooks/useCart";
 import { moneyFormatter } from "@/helpers";
 import api from "@/services/api";
 import { ProductPropType } from "@/types/Product";
 import { Rating } from "@/components/atoms";
+import { ButtonAddCart } from "@/components/molecules";
 
 const ProductSingle = ({ id }: { id: string }) => {
-    const { dispatch } = useCart();
     const [loading, setLoading] = useState<boolean>(true);
     const [product, setProduct] = useState<ProductPropType>();
-
-    const handleAddToCart = () => {
-        dispatch({ type: 'ADD_TO_CART', payload: product });
-    };
 
     useEffect(() => {
         async function getProduct() {
@@ -45,7 +40,7 @@ const ProductSingle = ({ id }: { id: string }) => {
                     <div className="flex flex-col w-full gap-3">
                         <div className="flex flex-col gap-3">
                             <nav aria-label="Breadcrumb">
-                                <ol role="list" className="mx-auto flex max-w-2xl items-center space-x-2">
+                                <ol role="list" className="mx-auto flex w-full max-w-2xl items-center space-x-2">
                                     <li>
                                         <div className="flex items-center">
                                             <a href="#" className="mr-2 capitalize text-sm font-medium text-blue-400">
@@ -54,8 +49,8 @@ const ProductSingle = ({ id }: { id: string }) => {
                                             <FiChevronRight className="text-slate-500" />
                                         </div>
                                     </li>
-                                    <li className="text-sm">
-                                        <a href="#" aria-current="page" className="font-medium text-gray-400">
+                                    <li className="flex w-full max-w-sm text-sm">
+                                        <a href="#" aria-current="page" className="font-medium text-gray-400 truncate">
                                             {product.title}
                                         </a>
                                     </li>
@@ -73,10 +68,7 @@ const ProductSingle = ({ id }: { id: string }) => {
                             {product.description}
                         </p>
                         <div className="flex items-center">
-                            <button type="button" onClick={handleAddToCart} className="flex px-8 py-3 bg-indigo-600 text-white text-sm font-medium rounded hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500 gap-3">
-                                <FiPlus className="text-xl" />
-                                Adicionar ao Carrinho
-                            </button>
+                            <ButtonAddCart {...product} />
                         </div>
                     </div>
                 </div>

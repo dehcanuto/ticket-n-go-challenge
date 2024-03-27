@@ -1,14 +1,9 @@
-"use client"
-
-import { useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { SidebarContext } from "@/context/sidebar/context";
-import { ActionNavigation, MenuNavigation, MobileNavigation } from "@/components/molecules";
+import { ActionNavigation, MenuNavigation } from "@/components/molecules";
 
 const Header = () => {
-    const { open, setOpenState } = useContext(SidebarContext);
     return (
         <>
             <header className="bg-gray-900 text-white w-screen">
@@ -28,7 +23,6 @@ const Header = () => {
                     </div>
                 </div>
             </header>
-            {open && <MobileNavigation closeMenu={() => setOpenState(false)} />}
         </>
     )
 }

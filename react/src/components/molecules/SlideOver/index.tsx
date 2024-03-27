@@ -11,7 +11,7 @@ const SlideOver = ({ title, children, orientation, action }: SlideOverPropsType)
                         <div className="pointer-events-auto relative w-full">
                             <div className="flex h-full flex-col overflow-y-scroll bg-slate-700 py-6 shadow-xl">
                                 <div className="flex items-center justify-between px-4 sm:px-6">
-                                    <h2 className="text-base font-semibold leading-6 text-blue-500" id="slide-over-title">
+                                    <h2 className="text-lg font-semibold leading-6 text-white" id="slide-over-title">
                                         {title}
                                     </h2>
                                     <button type="button" onClick={action}>
