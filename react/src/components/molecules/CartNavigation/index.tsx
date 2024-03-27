@@ -15,7 +15,7 @@ const CartNavigation = ({ cart, dispatch }: CartContextType) => {
             <ul role="list" className="divide-y divide-slate-500">
                 {cart.map((item, key) => 
                     <li key={key}>
-                        <CartItem {...item}/>
+                        <CartItem {...item} />
                     </li>)}
             </ul>
         </div>
