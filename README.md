@@ -3,6 +3,7 @@
 ![Version](https://img.shields.io/badge/1.0.0-beta?label=version)
 ![TicketNGo](https://img.shields.io/badge/powered_by-Ticket%20N%20Go-051d36)
 ![NextJS version](https://img.shields.io/badge/NextJS-14.1.4-black?style=flat-square&logo=next.js&logoColor=white)
+![NuxtJS version](https://img.shields.io/badge/NuxtJS-3.11.1-00dc82?style=flat-square&logo=nuxt.js&logoColor=white)
 
 # Ticket N Go - Tech Challenge
 
@@ -14,19 +15,30 @@ Desenvolva um catálogo de produtos simples que mostre produtos da Fake Store AP
 
 *  [NodeJS](https://nodejs.org/en/docs/) - Ambiente de execução JavaScript
 *  [NextJS](https://nextjs.org/docs) - Framework web TypeScript para front-end
+*  [Nuxt 3](https://nuxt.com/docs/getting-started/introduction) - Framework web TypeScript para front-end
 *  [Tailwind CSS](https://tailwindcss.com/docs) - Framework para estilização
 *  [Atomic Design](https://atomicdesign.bradfrost.com/) - Metodologia para o design system
 *  [Fake Store API](https://fakestoreapi.com/docs) - Api dos produtos
 
 ## 🚀 Instalação
 
-1. Instale as dependências do projeto.
+1. Escolha o projeto
+
+Ambos os projetos possuem a mesma configuração para instalar e rodar as aplicações.
+
+Basta escolher o projeto através do comando:
+
+```bash
+cd [diretorio do projeto escolhido]
+```
+
+2. Instale as dependências do projeto.
 
 ```bash
 yarn install
 ```
 
-1. Inicie o projeto em um servidor de desenvolvimento [http://localhost:3000](http://localhost:3000) e veja o resultado em seu browser preferido.
+3. Inicie o projeto em um servidor de desenvolvimento [http://localhost:3000](http://localhost:3000) e veja o resultado em seu browser preferido.
 
 ```bash
 yarn dev
