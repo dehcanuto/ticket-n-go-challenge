@@ -34,11 +34,11 @@ yarn dev
 
 ## 🎯 Requisitos do desafio
 
-- [ ] Liste os produtos obtidos da Fake Store API(https://fakestoreapi.com/docs), mostrando pelo menos a imagem, o nome e o preço de cada produto.
-- [ ] Implemente um design responsivo simples para a lista de produtos.
-- [ ] Ao clicar em um produto, exiba uma modal ou navegue para uma página de detalhes mostrando mais informações do produto (por exemplo, descrição, categoria).
-- [ ] Permita fechar a modal ou voltar à lista de produtos facilmente.
-- [ ] Inclua um README simples que explique como rodar cada projeto, as decisões de design tomadas e qualquer outra informação que considere relevante.
-- [ ] Adicione a funcionalidade que permite aos usuários adicionar produtos ao carrinho a partir da lista de produtos ou da página de detalhes.
-- [ ] Exiba um ícone ou link para o carrinho que mostre a quantidade de itens no carrinho. Este indicador deve ser atualizado dinamicamente conforme itens são adicionados ao carrinho.
-- [ ] (Opcional) Crie uma página ou modal para o carrinho onde os usuários possam ver os itens adicionados, com opções para remover itens ou limpar o carrinho inteiro.
+- [x] Liste os produtos obtidos da Fake Store API(https://fakestoreapi.com/docs), mostrando pelo menos a imagem, o nome e o preço de cada produto.
+- [x] Implemente um design responsivo simples para a lista de produtos.
+- [x] Ao clicar em um produto, exiba uma modal ou navegue para uma página de detalhes mostrando mais informações do produto (por exemplo, descrição, categoria).
+- [x] Permita fechar a modal ou voltar à lista de produtos facilmente.
+- [x] Inclua um README simples que explique como rodar cada projeto, as decisões de design tomadas e qualquer outra informação que considere relevante.
+- [x] Adicione a funcionalidade que permite aos usuários adicionar produtos ao carrinho a partir da lista de produtos ou da página de detalhes.
+- [x] Exiba um ícone ou link para o carrinho que mostre a quantidade de itens no carrinho. Este indicador deve ser atualizado dinamicamente conforme itens são adicionados ao carrinho.
+- [x] (Opcional) Crie uma página ou modal para o carrinho onde os usuários possam ver os itens adicionados, com opções para remover itens ou limpar o carrinho inteiro.

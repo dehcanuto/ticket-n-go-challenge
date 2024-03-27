@@ -3,7 +3,7 @@ import { ActionLinksPropsType } from './types';
 
 const ActionLinks = ({ icon, style, notified = false, action }: ActionLinksPropsType) => {
     return (
-        <button type="button" onClick={action} className={`${style} flex items-center text-2xl hover:text-gray-200`}>
+        <button type="button" onClick={action} className={`${style} flex items-center text-2xl hover:text-blue-400`}>
             <DynamicIcon iconFamily="fi" icon={icon} />
             {notified && (
                 <span className="flex absolute -mt-5 ml-4">
