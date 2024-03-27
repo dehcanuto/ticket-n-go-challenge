@@ -4,6 +4,29 @@ import { ProductPropType } from "@/types/Product";
 import { moneyFormatter } from "@/helpers";
 import { Rating } from "@/components/atoms";
 import { ButtonAddCart } from "..";
+import { IoStar } from "react-icons/io5";
+
+const SkeletonProductCard = () => {
+    return (
+        <div className="group animate-pulse relative h-fit bg-slate-700 rounded-lg overflow-hidden">
+            <span className="flex w-full h-80 overflow-hidden bg-slate-500" />
+            <div className="flex flex-col justify-between p-4">
+                <div className="flex flex-col w-full mb-3">
+                    <span className="w-56 h-4 bg-slate-500 mb-2 rounded" />
+                    <span className="w-36 h-4 bg-slate-500 mb-2 rounded" />
+                    <div className="flex mt-1 text-slate-500 gap-2">
+                        {[1, 2, 3, 4, 5].map((_, index) => <IoStar key={index} />)}
+                    </div>
+                    <div className="flex flex-row items-center justify-between">
+                        <span className="mt-2 w-24 h-4 px-2 text-xs text-gray-300 border border-gray-500 rounded-sm" />
+                    </div>
+                </div>
+                <span className="flex my-3 w-24 h-6 bg-blue-500 rounded" />
+                <span className="flex w-full h-10 bg-indigo-600 rounded" />
+            </div>
+        </div>
+    )
+}
 
 const ProductCard = (product: ProductPropType) => {
     const { id, title, image, price, category, rating } = product
@@ -41,4 +64,4 @@ const ProductCard = (product: ProductPropType) => {
     )
 }
 
-export default ProductCard;
+export { SkeletonProductCard, ProductCard };

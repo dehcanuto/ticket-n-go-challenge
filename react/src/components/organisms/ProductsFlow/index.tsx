@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ProductsFlowPropsType } from "./types";
 import { ProductPropType } from "@/types/Product";
 import api from "@/services/api";
-import { ProductCard } from "@/components/molecules";
+import { ProductCard, SkeletonProductCard } from "@/components/molecules";
 
 const ProductsFlow = ({ title, url, limit = 0, notMore = false }: ProductsFlowPropsType) => {
     const [loading, setLoading] = useState<boolean>(true);
@@ -34,7 +34,7 @@ const ProductsFlow = ({ title, url, limit = 0, notMore = false }: ProductsFlowPr
                         products?.map((item: ProductPropType, key) => 
                             <ProductCard key={key} {...item} />) :
                         'Sem resultados.' : 
-                    'Carregando'}
+                        [1, 2, 3, 4].map((_, index) => <SkeletonProductCard key={index} />)}
             </div>
         </section>
     )
