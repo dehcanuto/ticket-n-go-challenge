@@ -3,11 +3,14 @@ import Link from "next/link";
 import { ProductPropType } from "@/types/Product";
 import { moneyFormatter } from "@/helpers";
 import { Rating } from "@/components/atoms";
+import { ButtonAddCart } from "..";
 
-const ProductCard = ({ id, title, image, price, category, rating }: ProductPropType) => {
+const ProductCard = (product: ProductPropType) => {
+    const { id, title, image, price, category, rating } = product
+
     return (
-        <Link href={`/products/${id}`} className="group relative bg-slate-700 rounded-lg overflow-hidden">
-            <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden bg-white lg:aspect-none group-hover:opacity-75 lg:h-80">
+        <Link href={`/products/${id}`} className="group relative h-fit bg-slate-700 rounded-lg overflow-hidden">
+            <div className="aspect-h-1 aspect-w-1 w-full h-full h-80 overflow-hidden bg-white lg:aspect-none group-hover:opacity-75">
                 <Image
                     src={image}
                     alt={title}
@@ -29,9 +32,10 @@ const ProductCard = ({ id, title, image, price, category, rating }: ProductPropT
                         </p>
                     </div>
                 </div>
-                <p className="flex mt-3 text-2xl font-semibold text-blue-500">
+                <p className="flex my-3 text-2xl font-semibold text-blue-500">
                     {moneyFormatter(price)}
                 </p>
+                <ButtonAddCart {...product} />
             </div>
         </Link>
     )
