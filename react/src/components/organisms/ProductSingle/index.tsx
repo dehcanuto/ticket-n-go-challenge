@@ -43,7 +43,7 @@ const ProductSingle = ({ id }: { id: string }) => {
                                 <ol role="list" className="mx-auto flex w-full max-w-2xl items-center space-x-2">
                                     <li>
                                         <div className="flex items-center">
-                                            <a href="#" className="mr-2 capitalize text-sm font-medium text-blue-400">
+                                            <a href="#" className="mr-2 capitalize text-sm font-medium text-blue-400 truncate">
                                                 {product.category}
                                             </a>
                                             <FiChevronRight className="text-slate-500" />

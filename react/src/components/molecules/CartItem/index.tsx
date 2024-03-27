@@ -1,8 +1,12 @@
 import Image from "next/image";
 import { ProductPropType } from "@/types/Product";
 import { moneyFormatter } from "@/helpers";
+import useCart from "@/hooks/useCart";
 
-const CartItem = ({ title, price, category, image }: ProductPropType) => {
+const CartItem = (product: ProductPropType) => {
+    const { title, price, category, image } = product
+    const { dispatch } = useCart()
+    
     return (
         <div className="flex p-3 bg-slate-600 py-4 rounded">
             <div className="h-16 w-16 flex-shrink-0 overflow-hidden rounded">
@@ -32,7 +36,10 @@ const CartItem = ({ title, price, category, image }: ProductPropType) => {
                 <div className="flex flex-1 items-end justify-between text-xs">
                     <p className="text-slate-400">Qnt. 1</p>
                     <div className="flex">
-                        <button type="button" className="font-medium text-red-500">
+                        <button
+                            type="button"
+                            onClick={() => dispatch({ type: 'REMOVE_FROM_CART', payload: product })}
+                            className="font-medium text-red-500">
                             Remover
                         </button>
                     </div>
